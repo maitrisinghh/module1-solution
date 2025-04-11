@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Checker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .enjoy {
+            color: green;
+        }
+        .too-much {
+            color: green;
+        }
+        .empty {
+            color: red;
+        }
+        .valid {
+            border: 1px solid green;
+        }
+        .invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="LunchCheckController">
+        <h1>Lunch Checker</h1>
+        <div>
+            <label for="lunchItems">List comma-separated items you usually eat for lunch:</label>
+            <input type="text" id="lunchItems" ng-model="lunchList" style="width: 300px;">
+            </div>
+        <div>
+            <button ng-click="checkLunch()">Check If Too Much</button>
+        </div>
+        <div class="message" ng-class="messageClass">{{message}}</div>
+    </div>
+</body>
+</html>
